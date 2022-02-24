@@ -2,8 +2,11 @@
 //  Weather_SwiftUIApp.swift
 //  Weather-SwiftUI
 //
-//  Created by Петухов Василий Сергеевич on 22.02.2022.
+//  Created by Vasily Petuhov on 22.02.2022.
 //
+
+// MARK: -  Swift 5: Protocol-Oriented Programming - LEARNING
+// https://www.linkedin.com/learning/swift-5-protocol-oriented-programming
 
 import SwiftUI
 
