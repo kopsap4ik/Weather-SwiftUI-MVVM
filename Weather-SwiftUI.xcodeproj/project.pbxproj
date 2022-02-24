@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8507F57E27C781BD004C662A /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507F57D27C781BD004C662A /* APIKeys.swift */; };
 		855C416427C4B83C00349ABF /* Weather_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C416327C4B83C00349ABF /* Weather_SwiftUIApp.swift */; };
 		855C416627C4B83C00349ABF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C416527C4B83C00349ABF /* ContentView.swift */; };
 		855C416827C4B83E00349ABF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 855C416727C4B83E00349ABF /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8507F57D27C781BD004C662A /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		855C416027C4B83C00349ABF /* Weather-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		855C416327C4B83C00349ABF /* Weather_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_SwiftUIApp.swift; sourceTree = "<group>"; };
 		855C416527C4B83C00349ABF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				855C417927C4C86600349ABF /* JSONMappers */,
 				855C417327C4BBC100349ABF /* WebServiceProtocol.swift */,
+				8507F57D27C781BD004C662A /* APIKeys.swift */,
 				855C417527C4BE1D00349ABF /* OpenWeatherMapService.swift */,
 				855C418027C50C2B00349ABF /* WeatherStackService.swift */,
 			);
@@ -186,6 +189,7 @@
 				855C417427C4BBC100349ABF /* WebServiceProtocol.swift in Sources */,
 				855C417C27C4CAE100349ABF /* WeatherViewModel.swift in Sources */,
 				855C418327C5117700349ABF /* WeatherStackMap.swift in Sources */,
+				8507F57E27C781BD004C662A /* APIKeys.swift in Sources */,
 				855C417627C4BE1D00349ABF /* OpenWeatherMapService.swift in Sources */,
 				855C416627C4B83C00349ABF /* ContentView.swift in Sources */,
 				855C416427C4B83C00349ABF /* Weather_SwiftUIApp.swift in Sources */,

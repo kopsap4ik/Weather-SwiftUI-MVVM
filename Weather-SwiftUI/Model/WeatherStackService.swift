@@ -7,11 +7,6 @@
 
 import Foundation
 
-private enum API {
-//	static let keyOpenWeatherMap = "9ec63d85b9c144ed7ba4e335eef34245"
-	static let keyWeatherStack = "3225f258915e8844502bf6dae948fef5"
-}
-
 class WeatherStackService: WebServiceProtocol {
 	let fallbackService: WebServiceProtocol?
 
