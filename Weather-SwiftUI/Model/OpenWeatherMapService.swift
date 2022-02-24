@@ -7,7 +7,7 @@
 
 import Foundation
 
-class OpenWeatherMapService: WebServiceProtocol{
+class OpenWeatherMapService: WebServiceProtocol {
 	let fallbackService: WebServiceProtocol?
 
 	required init(fallbackService: WebServiceProtocol? = nil) {
