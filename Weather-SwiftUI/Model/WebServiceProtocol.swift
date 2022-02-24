@@ -16,5 +16,5 @@ public enum WebServiceError {
 public protocol WebServiceProtocol {
 	var fallbackService: WebServiceProtocol? { get }
 	init(fallbackService: WebServiceProtocol?)
-	func fetchWeatherData(for city: String, complitionHandler: @escaping (String?, WebServiceError?) -> Void)
+	func fetchWeatherData(for city: String, completionHandler: @escaping (String?, WebServiceError?) -> Void)
 }

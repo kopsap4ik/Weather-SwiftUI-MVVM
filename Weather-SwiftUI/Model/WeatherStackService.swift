@@ -19,13 +19,13 @@ class WeatherStackService: WebServiceProtocol {
 		self.fallbackService = fallbackService
 	}
 
-	func fetchWeatherData(for city: String, complitionHandler: @escaping (String?, WebServiceError?) -> Void) {
+	func fetchWeatherData(for city: String, completionHandler: @escaping (String?, WebServiceError?) -> Void) {
 		let endpoint = "http://api.weatherstack.com/current?access_key=\(API.keyWeatherStack)&query=\(city)&units=f"
 
 		guard let safeURLSharing = endpoint.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
 			  let endpointURL = URL(string: safeURLSharing)
 		else {
-			complitionHandler(nil, WebServiceError.invalidURL(endpoint))
+			completionHandler(nil, WebServiceError.invalidURL(endpoint))
 			return
 		}
 
@@ -33,18 +33,18 @@ class WeatherStackService: WebServiceProtocol {
 
 			guard error == nil else {
 				if let fallback = self.fallbackService {
-					fallback.fetchWeatherData(for: city, complitionHandler: complitionHandler)
+					fallback.fetchWeatherData(for: city, completionHandler: completionHandler)
 				} else {
-					complitionHandler(nil, WebServiceError.forwarded(error!))
+					completionHandler(nil, WebServiceError.forwarded(error!))
 				}
 				return
 			}
 
 			guard let responseData = data else {
 				if let fallback = self.fallbackService {
-					fallback.fetchWeatherData(for: city, complitionHandler: complitionHandler)
+					fallback.fetchWeatherData(for: city, completionHandler: completionHandler)
 				} else {
-					complitionHandler(nil, WebServiceError.invalidPayload(endpointURL))
+					completionHandler(nil, WebServiceError.invalidPayload(endpointURL))
 				}
 				return
 			}
@@ -57,16 +57,16 @@ class WeatherStackService: WebServiceProtocol {
 					  let weather = weatherInfo.weather_descriptions?.first,
 					  let temperature = weatherInfo.temperature
 				else {
-					complitionHandler(nil, WebServiceError.invalidPayload(endpointURL))
+					completionHandler(nil, WebServiceError.invalidPayload(endpointURL))
 					return
 				}
 
 				/// compose weather information
 				let weatherDescription = "\(weather) - \(temperature) F"
-				complitionHandler(weatherDescription, nil)
+				completionHandler(weatherDescription, nil)
 
 			} catch let error {
-				complitionHandler(nil, WebServiceError.forwarded(error))
+				completionHandler(nil, WebServiceError.forwarded(error))
 			}
 		}
 
